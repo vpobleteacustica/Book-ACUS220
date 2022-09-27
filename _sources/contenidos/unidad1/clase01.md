@@ -14,4 +14,4 @@
 + Conda instala, ejecuta y actualiza rápidamente los paquetes y sus dependencias. 
 + También crea, guarda, carga y cambia fácilmente entre entornos en nuestro computador local. Fue creado para programas de Python, pero puede empaquetar y distribuir software para cualquier idioma.
 + `Miniconda` es un instalador mínimo gratuito para `conda`. Es una pequeña versión de arranque de Anaconda que incluye sólo conda, Python, los paquetes de los que dependen y una pequeña cantidad de otros paquetes útiles, incluidos pip, zlib y algunos otros. 
-+ Utilizamos [Mininaconda] https://docs.conda.io/en/latest/miniconda.html
++ Utilicemos [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
