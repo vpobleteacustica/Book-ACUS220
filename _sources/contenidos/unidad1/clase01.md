@@ -1,7 +1,7 @@
 # Comenzando con ACUS220
 
 ## Distribución Anaconda y entorno virtual.
-
++ ¿Por qué necesitamos configurar un entorno virtual?
 + Muchas de las `aplicaciones` de Python requieren `paquetes` y `módulos` que no son parte de la `librería` estándar. 
 + Además, cualquiera aplicación necesitará una `versión` específica de una `librería`.
 + Qué significa ésto? Que podría ocurrir que no sea posible que una instalación de Python cumpla con los todos los requisitos de una aplicación. Por ejemplo, si la aplicación `acus_1` necesita la versión 1.0 de un módulo en particular, pero la aplicación `acus_2` necesita la versión 2.0, entonces los requisitos están en `conflicto de versiones` y la instalación de la versión 1.0, ó 2.0, dejará una aplicación `incapaz` de ejecutarse.
