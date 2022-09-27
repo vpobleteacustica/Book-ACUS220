@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>1. Comenzando con ACUS220 &#8212; ACUS220 - Acústica Computacional con Python</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="2. Entornos de trabajo y programas de control de versiones para un código" href="clase02.html" />
+    <link rel="prev" title="ACUS220 - Acústica Computacional con Python" href="../../README.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="es">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ACUS220 - Acústica Computacional con Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../README.html">
+                    ACUS220 - Acústica Computacional con Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Entornos de trabajo y programas de control de versiones para un código
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Comenzando con ACUS220
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clase02.html">
+   2. Entornos de trabajo y programas de control de versiones para un código
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/contenidos/unidad1/clase01.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#distribucion-anaconda-y-entorno-virtual">
+   1.1. Distribución Anaconda y entorno virtual.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manejador-de-paquetes-conda-por-medio-de-la-instalacion-de-miniconda">
+   1.2. Manejador de paquetes Conda por medio de la instalación de Miniconda.
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Comenzando con ACUS220</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#distribucion-anaconda-y-entorno-virtual">
+   1.1. Distribución Anaconda y entorno virtual.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manejador-de-paquetes-conda-por-medio-de-la-instalacion-de-miniconda">
+   1.2. Manejador de paquetes Conda por medio de la instalación de Miniconda.
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="comenzando-con-acus220">
+<h1><span class="section-number">1. </span>Comenzando con ACUS220<a class="headerlink" href="#comenzando-con-acus220" title="Enlazar permanentemente con este título">#</a></h1>
+<section id="distribucion-anaconda-y-entorno-virtual">
+<h2><span class="section-number">1.1. </span>Distribución Anaconda y entorno virtual.<a class="headerlink" href="#distribucion-anaconda-y-entorno-virtual" title="Enlazar permanentemente con este título">#</a></h2>
+<ul class="simple">
+<li><p>Muchas de las <code class="docutils literal notranslate"><span class="pre">aplicaciones</span></code> de Python requieren <code class="docutils literal notranslate"><span class="pre">paquetes</span></code> y <code class="docutils literal notranslate"><span class="pre">módulos</span></code> que no son parte de la <code class="docutils literal notranslate"><span class="pre">librería</span></code> estándar.</p></li>
+<li><p>Además, cualquiera aplicación necesitará una <code class="docutils literal notranslate"><span class="pre">versión</span></code> específica de una <code class="docutils literal notranslate"><span class="pre">librería</span></code>.</p></li>
+<li><p>Qué significa ésto? Que podría ocurrir que no sea posible que una instalación de Python cumpla con los todos los requisitos de una aplicación. Por ejemplo, si la aplicación <code class="docutils literal notranslate"><span class="pre">acus_1</span></code> necesita la versión 1.0 de un módulo en particular, pero la aplicación <code class="docutils literal notranslate"><span class="pre">acus_2</span></code> necesita la versión 2.0, entonces los requisitos están en <code class="docutils literal notranslate"><span class="pre">conflicto</span> <span class="pre">de</span> <span class="pre">versiones</span></code> y la instalación de la versión 1.0, ó 2.0, dejará una aplicación <code class="docutils literal notranslate"><span class="pre">incapaz</span></code> de ejecutarse.</p></li>
+<li><p>La solución para este problema de <code class="docutils literal notranslate"><span class="pre">conflicto</span> <span class="pre">de</span> <span class="pre">versiones</span></code> es crear un <code class="docutils literal notranslate"><span class="pre">entorno</span> <span class="pre">virtual</span></code>, esto es, se trata de un árbol de directorios, autocontenido que contenga una instalación de Python para una versión específica.</p></li>
+<li><p>Distintas <code class="docutils literal notranslate"><span class="pre">aplicaciones</span></code> pueden utilizar diferentes entornos virtuales. Por ejemplo, para solucionar el conflicto anterior de requisitos, la aplicación <code class="docutils literal notranslate"><span class="pre">acus_1</span></code> puede tener su propio entorno virtual con la versión 1.0 instalada. Mientras que, la aplicación <code class="docutils literal notranslate"><span class="pre">acus_2</span></code> tiene otro entorno virtual con la versión 2.0 instalada. Además, en el caso hipotético que la aplicación <code class="docutils literal notranslate"><span class="pre">acus_2</span></code> pudiera requerir que una <code class="docutils literal notranslate"><span class="pre">librería</span></code> se actualice a la versión 3.0, <code class="docutils literal notranslate"><span class="pre">esto</span> <span class="pre">no</span> <span class="pre">afectará</span></code> el entorno de la aplicación <code class="docutils literal notranslate"><span class="pre">acus_1</span></code>.</p></li>
+<li><p>Para sistema de administración de <code class="docutils literal notranslate"><span class="pre">paquetes</span></code> y un sistema de administración de <code class="docutils literal notranslate"><span class="pre">entornos</span> <span class="pre">virtuales</span></code> de <code class="docutils literal notranslate"><span class="pre">código</span> <span class="pre">abierto</span></code> que se ejecuta en Windows, macOS y Linux, ver <a class="reference external" href="https://conda.io/projects/conda/en/latest/index.html">Conda</a>, y para apoyar estos conceptos ver <a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">Administración de ambientes</a>.</p></li>
+</ul>
+</section>
+<section id="manejador-de-paquetes-conda-por-medio-de-la-instalacion-de-miniconda">
+<h2><span class="section-number">1.2. </span>Manejador de paquetes Conda por medio de la instalación de Miniconda.<a class="headerlink" href="#manejador-de-paquetes-conda-por-medio-de-la-instalacion-de-miniconda" title="Enlazar permanentemente con este título">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./contenidos/unidad1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../../README.html" title="anterior página">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">anterior</p>
+            <p class="prev-next-title">ACUS220 - Acústica Computacional con Python</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="clase02.html" title="siguiente página">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Entornos de trabajo y programas de control de versiones para un código</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Víctor Poblete, Diego Espejo, Esteban Gallardo<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
