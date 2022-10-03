@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
     <link rel="next" title="2. Entornos de trabajo y programas de control de versiones para un código" href="clase02.html" />
@@ -263,13 +265,60 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#por-que-es-importante-aprender-python-en-acustica">
+   1.1. ¿Por qué es importante aprender Python en acústica?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cual-es-la-utilidad-de-python">
+   1.2. ¿Cuál es la utilidad de Python?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datos-en-acustica">
+   1.3. Datos en acústica
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#distribucion-anaconda-y-entorno-virtual">
-   1.1. Distribución Anaconda y entorno virtual.
+   1.4. Distribución Anaconda y entorno virtual.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#manejador-de-paquetes-conda-por-medio-de-la-instalacion-de-miniconda">
-   1.2. Manejador de paquetes Conda por medio de la instalación de Miniconda.
+   1.5. Manejador de paquetes Conda por medio de la instalación de Miniconda.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creando-un-entorno-virtual-e-instalando-paquetes-y-librerias">
+   1.6. Creando un entorno virtual e instalando paquetes y librerías
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#paquetes-ipython-y-jupyter">
+     1.6.1. Paquetes IPython y Jupyter
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyter-notebook">
+     1.6.2. Jupyter Notebook
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kernels-lenguajes-de-programacion-y-ipykernel">
+     1.6.3. Kernels (lenguajes de programación) y ipykernel
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#canales-de-conda">
+   1.7. Canales de Conda
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#buscando-paquetes">
+   1.8. Buscando paquetes
   </a>
  </li>
 </ul>
@@ -292,13 +341,60 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#por-que-es-importante-aprender-python-en-acustica">
+   1.1. ¿Por qué es importante aprender Python en acústica?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cual-es-la-utilidad-de-python">
+   1.2. ¿Cuál es la utilidad de Python?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datos-en-acustica">
+   1.3. Datos en acústica
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#distribucion-anaconda-y-entorno-virtual">
-   1.1. Distribución Anaconda y entorno virtual.
+   1.4. Distribución Anaconda y entorno virtual.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#manejador-de-paquetes-conda-por-medio-de-la-instalacion-de-miniconda">
-   1.2. Manejador de paquetes Conda por medio de la instalación de Miniconda.
+   1.5. Manejador de paquetes Conda por medio de la instalación de Miniconda.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creando-un-entorno-virtual-e-instalando-paquetes-y-librerias">
+   1.6. Creando un entorno virtual e instalando paquetes y librerías
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#paquetes-ipython-y-jupyter">
+     1.6.1. Paquetes IPython y Jupyter
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyter-notebook">
+     1.6.2. Jupyter Notebook
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kernels-lenguajes-de-programacion-y-ipykernel">
+     1.6.3. Kernels (lenguajes de programación) y ipykernel
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#canales-de-conda">
+   1.7. Canales de Conda
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#buscando-paquetes">
+   1.8. Buscando paquetes
   </a>
  </li>
 </ul>
@@ -313,8 +409,33 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="comenzando-con-acus220">
 <h1><span class="section-number">1. </span>Comenzando con ACUS220<a class="headerlink" href="#comenzando-con-acus220" title="Enlazar permanentemente con este título">#</a></h1>
+<section id="por-que-es-importante-aprender-python-en-acustica">
+<h2><span class="section-number">1.1. </span>¿Por qué es importante aprender Python en acústica?<a class="headerlink" href="#por-que-es-importante-aprender-python-en-acustica" title="Enlazar permanentemente con este título">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Python</span></code> ha surgido en las últimas dos décadas como una herramienta de primera clase para tareas de <code class="docutils literal notranslate"><span class="pre">computación</span> <span class="pre">científica</span></code>.</p></li>
+<li><p>Esto ha incluido la posibilidad de analizar y explorar grandes conjuntos de datos (incluiodo los datos de origen acústico).</p></li>
+<li><p>Lo anterior puede haber resultado toda una sorpresa para los primeros defensores del lenguaje <code class="docutils literal notranslate"><span class="pre">Python</span></code>. Porque el lenguaje en sí mismo no fue diseñado específicamente para el análisis de datos o la computación científica en mente.</p></li>
+</ul>
+</section>
+<section id="cual-es-la-utilidad-de-python">
+<h2><span class="section-number">1.2. </span>¿Cuál es la utilidad de Python?<a class="headerlink" href="#cual-es-la-utilidad-de-python" title="Enlazar permanentemente con este título">#</a></h2>
+<ul class="simple">
+<li><p>La utilidad de Python para el campo de la acústica proviene principalmente del gran y activo <code class="docutils literal notranslate"><span class="pre">ecosistema</span></code> de paquetes de terceros: <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> para la manipulación de datos homogéneos basados ​​en matrices; <code class="docutils literal notranslate"><span class="pre">Pandas</span></code>  para la manipulación de datos heterogéneos y etiquetados; <code class="docutils literal notranslate"><span class="pre">SciPy</span></code> para tareas comunes de computación científica; <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> para visualización de calidad de publicación; <code class="docutils literal notranslate"><span class="pre">IPython/Jupyter</span></code> que proporcionan un terminal mejorado y un entorno para interacción de cuadernillo que es muy útil para el análisis exploratorio, visualización, así como también, para la creación de documentos interactivos y ejecutables. Por ejemplo, este libro de curso está compuesto enteramente de cuadernillos Jupyter; y <code class="docutils literal notranslate"><span class="pre">Scikit-Learn</span></code> para aprendizaje de máquinas y muchas herramientas más que se irán mencionando durante el curso.</p></li>
+</ul>
+</section>
+<section id="datos-en-acustica">
+<h2><span class="section-number">1.3. </span>Datos en acústica<a class="headerlink" href="#datos-en-acustica" title="Enlazar permanentemente con este título">#</a></h2>
+<ul class="simple">
+<li><p>En acústica usamos una gran variedad de datos los que nos permiten la posibilidad de explorarlos científicamente y aplicar la propia perspectiva de la ingeniería acústica.</p></li>
+<li><p>Hay una amplia variedad diferente de campos que están relacionados: señales de audio provenientes por ejemplo de procesos de la voz, de origen médico, vibraciones sísmicas, contextos diversos en ecoacústica y biodiversidad, para la interpretación de vocalizaciones de los animales (aves, anfibios), en la localización de fuentes sonoras y en el análisis de imágenes en diferentes escenas acústicas, en espacios interiores, espacios urbanas y rurales. Entre otros <span class="math notranslate nohighlight">\(\ldots\)</span></p></li>
+<li><p>En todos estos campos, el análisis de datos se ve complicado por una serie de desafíos, que incluyen ruido que podría aparecer en los datos, el escaso número de mediciones o ejemplos, la reverberación o bien, el manejo de grandes volúmenes de datos.</p></li>
+<li><p>En muchos casos, se podrían revisar manualmente hasta una cierta cantidad datos acústicos, lo que demandará sin duda un esfuerzo humano.</p></li>
+<li><p>Pero este esfuerzo se hace mayor y se vuelve rápidamente una limitante, cuando aumenta el tamaño de los conjuntos de datos.</p></li>
+<li><p>Además, pueden existir ciertos <code class="docutils literal notranslate"><span class="pre">patrones</span> <span class="pre">característicos</span></code> en los datos que no son fácilmente reconocidos por una revisión humana y que sería de interés poderlos descubrir para analizar.</p></li>
+</ul>
+</section>
 <section id="distribucion-anaconda-y-entorno-virtual">
-<h2><span class="section-number">1.1. </span>Distribución Anaconda y entorno virtual.<a class="headerlink" href="#distribucion-anaconda-y-entorno-virtual" title="Enlazar permanentemente con este título">#</a></h2>
+<h2><span class="section-number">1.4. </span>Distribución Anaconda y entorno virtual.<a class="headerlink" href="#distribucion-anaconda-y-entorno-virtual" title="Enlazar permanentemente con este título">#</a></h2>
 <ul class="simple">
 <li><p>¿Por qué necesitamos configurar un entorno virtual?</p></li>
 <li><p>Muchas de las <code class="docutils literal notranslate"><span class="pre">aplicaciones</span></code> de Python requieren <code class="docutils literal notranslate"><span class="pre">paquetes</span></code> y <code class="docutils literal notranslate"><span class="pre">módulos</span></code> que no son parte de la <code class="docutils literal notranslate"><span class="pre">librería</span></code> estándar.</p></li>
@@ -326,7 +447,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="manejador-de-paquetes-conda-por-medio-de-la-instalacion-de-miniconda">
-<h2><span class="section-number">1.2. </span>Manejador de paquetes Conda por medio de la instalación de Miniconda.<a class="headerlink" href="#manejador-de-paquetes-conda-por-medio-de-la-instalacion-de-miniconda" title="Enlazar permanentemente con este título">#</a></h2>
+<h2><span class="section-number">1.5. </span>Manejador de paquetes Conda por medio de la instalación de Miniconda.<a class="headerlink" href="#manejador-de-paquetes-conda-por-medio-de-la-instalacion-de-miniconda" title="Enlazar permanentemente con este título">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Conda</span></code> es un sistema de gestión de entornos y paquetes de código abierto que se ejecuta en Windows, macOS y Linux.</p></li>
 <li><p>Conda instala, ejecuta y actualiza rápidamente los paquetes y sus dependencias.</p></li>
@@ -334,6 +455,167 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">Miniconda</span></code> es un instalador mínimo gratuito para <code class="docutils literal notranslate"><span class="pre">conda</span></code>. Es una pequeña versión de arranque de Anaconda que incluye sólo conda, Python, los paquetes de los que dependen y una pequeña cantidad de otros paquetes útiles, incluidos pip, zlib y algunos otros.</p></li>
 <li><p>Utilicemos <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a></p></li>
 </ul>
+</section>
+<section id="creando-un-entorno-virtual-e-instalando-paquetes-y-librerias">
+<h2><span class="section-number">1.6. </span>Creando un entorno virtual e instalando paquetes y librerías<a class="headerlink" href="#creando-un-entorno-virtual-e-instalando-paquetes-y-librerias" title="Enlazar permanentemente con este título">#</a></h2>
+<ul class="simple">
+<li><p>Los <code class="docutils literal notranslate"><span class="pre">entornos</span></code> son uno de los conceptos más útiles en conda. Son instalaciones autónomas, es decir, <code class="docutils literal notranslate"><span class="pre">todo</span> <span class="pre">lo</span> <span class="pre">que</span> <span class="pre">está</span> <span class="pre">dentro</span> <span class="pre">de</span> <span class="pre">un</span> <span class="pre">entorno</span> <span class="pre">sólo</span> <span class="pre">depende</span> <span class="pre">de</span> <span class="pre">las</span> <span class="pre">cosas</span> <span class="pre">que</span> <span class="pre">están</span> <span class="pre">dentro</span> <span class="pre">de</span> <span class="pre">ese</span> <span class="pre">entorno.</span></code></p></li>
+<li><p>El <code class="docutils literal notranslate"><span class="pre">entorno</span> <span class="pre">base</span></code> es creado cuando uno instala <code class="docutils literal notranslate"><span class="pre">Miniconda</span></code> o <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code>.</p></li>
+<li><p>Y contiene: <code class="docutils literal notranslate"><span class="pre">conda</span></code> y los paquetes necesarios para operaciones <code class="docutils literal notranslate"><span class="pre">básicas</span></code>.</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Importante</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Un error típico es instalar paquetes en el entorno <code class="docutils literal notranslate"><span class="pre">base</span></code>. <strong>NO HAGAS ESO</strong>. Si lo haces, podrías crear conflictos con otros entornos que pudieras crear.</p>
+</div>
+</div>
+<ul class="simple">
+<li><p>Para crear un entorno nuevo:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="o">&lt;</span><span class="n">nombre_de_mi_entorno</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>O bien:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="o">&lt;</span><span class="n">nombre_de_mi_entorno</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition-nota admonition">
+<p class="admonition-title">Nota:</p>
+<p>Reemplazar <strong>&lt;nombre_de_mi_entorno&gt;</strong> con el nombre que le quieres dar a tu entorno.</p>
+</div>
+<ul class="simple">
+<li><p>Por ejemplo, crear el entorno virtual llamado <code class="docutils literal notranslate"><span class="pre">acus220</span></code>:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">acus220</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Puedes activar un entorno usando:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="o">&lt;</span><span class="n">nombre_de_mi_entorno</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Para desactivar un entorno, escribe:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">deactivate</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Paquetes pueden ser instalados usando el comando:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="p">[</span><span class="n">el</span> <span class="n">nombre</span> <span class="n">de</span> <span class="n">un</span> <span class="n">paquete</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Nota:</p>
+<p>Reemplazar <strong>[el nombre de un paquete]</strong> por el nombre del paquete que necesitas!</p>
+</div>
+<ul class="simple">
+<li><p>Para ver una lista de todos tus entornos, en tu terminal, ejecuta:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Si tu entorno está activado y quieres ver una lista de todos los paquetes que tienes instalados en tu entorno específico, en tu terminal, ejecuta:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Para eliminar un entorno, en tu terminal, ejecuta:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">remove</span> <span class="o">--</span><span class="n">name</span> <span class="o">&lt;</span><span class="n">nombre_de_mi_entorno</span><span class="o">&gt;</span> <span class="o">--</span><span class="nb">all</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>O bien,</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">remove</span> <span class="o">--</span><span class="n">name</span> <span class="o">&lt;</span><span class="n">nombre_de_mi_entorno</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<section id="paquetes-ipython-y-jupyter">
+<h3><span class="section-number">1.6.1. </span>Paquetes IPython y Jupyter<a class="headerlink" href="#paquetes-ipython-y-jupyter" title="Enlazar permanentemente con este título">#</a></h3>
+<ul class="simple">
+<li><p>Estos paquetes nos proporcionan el entorno computacional en el cual trabajan con Python muchos usuarios científicos de datos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IPython</span></code> (abreviación de <strong>Interactive Python</strong>) fue creado en 2001 por <a class="reference external" href="https://bids.berkeley.edu/people/fernando-p%C3%A9rez">Fernando Pérez</a>. Se puede pensar que <code class="docutils literal notranslate"><span class="pre">IPython</span></code> es un panel de control de Python interactivo.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> nos ofrecen una base interactiva de entornos informáticos, en donde la computación científica, la ciencia y análisis de datos (<code class="docutils literal notranslate"><span class="pre">audio,</span> <span class="pre">imágenes,</span> <span class="pre">o</span> <span class="pre">textos</span></code>), se pueden desarrollar utilizando una amplia gama de lenguajes de programación.</p></li>
+</ul>
+</section>
+<section id="jupyter-notebook">
+<h3><span class="section-number">1.6.2. </span>Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Enlazar permanentemente con este título">#</a></h3>
+<ul class="simple">
+<li><p>Es una aplicación basada en web, que nos permite crear documentos donde podemos combinar código en vivo, con texto narrativo, ecuaciones en <span class="math notranslate nohighlight">\(\LaTeX\)</span>, videos y explorar y visualizar datos.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p><a class="reference external" href="https://github.com/jupyter/notebook">Documentación</a>
+<a class="reference external" href="https://github.com/jupyter/notebook">Repo</a></p>
+</div>
+</section>
+<section id="kernels-lenguajes-de-programacion-y-ipykernel">
+<h3><span class="section-number">1.6.3. </span>Kernels (lenguajes de programación) y ipykernel<a class="headerlink" href="#kernels-lenguajes-de-programacion-y-ipykernel" title="Enlazar permanentemente con este título">#</a></h3>
+<ul class="simple">
+<li><p>En Jupyter, los <code class="docutils literal notranslate"><span class="pre">kernels</span></code> representan procesos específicos de lenguajes de programación que se ejecuta, de forma independiente y que interactúan con las aplicaciones de <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> y sus interfaces de usuario.</p></li>
+<li><p>El equipo de <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> mantiene el proyecto <a class="reference external" href="https://github.com/ipython/ipython"><code class="docutils literal notranslate"><span class="pre">IPython</span></code></a> el que se asigna como kernel predeterminado (como <a class="reference external" href="https://docs.jupyter.org/en/latest/projects/kernels.html#term-ipykernel"><code class="docutils literal notranslate"><span class="pre">ipykernel</span></code></a>) en varios clientes de Jupyter. Sin embargo, en el <code class="docutils literal notranslate"><span class="pre">cuadernillo</span></code> es posible usar diferentes lenguajes de programación además de <code class="docutils literal notranslate"><span class="pre">Python</span></code> <a class="reference external" href="https://github.com/jupyter/jupyter/wiki/Jupyter-kernels">lista disponible</a>.</p></li>
+<li><p>Nosotros podemos crear múltiples <code class="docutils literal notranslate"><span class="pre">kernels</span></code> de <code class="docutils literal notranslate"><span class="pre">IPython</span></code> para distintos entornos virtuales que vayamos creando (nos referimos a entornos <code class="docutils literal notranslate"><span class="pre">conda</span></code>). Para realizar esto, se debe especificar un nombre único del kernel.</p></li>
+<li><p>Nos debemos asegurar primero que hemos instalados en nuestro entorno virtual el paquete <code class="docutils literal notranslate"><span class="pre">ipykernel</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ipykernel</span></code> se puede considerar como lo que envuelve a IPython y que nos permitirá usar IPython en un kernel específico.</p></li>
+<li><p>Para instalar <code class="docutils literal notranslate"><span class="pre">ipykernel</span></code> en nuestro entorno, ejecutar en el terminal:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">ipykernel</span> <span class="n">install</span> <span class="o">--</span><span class="n">user</span> <span class="o">--</span><span class="n">name</span><span class="o">=&lt;</span><span class="n">nombre_del_kernel</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="canales-de-conda">
+<h2><span class="section-number">1.7. </span>Canales de Conda<a class="headerlink" href="#canales-de-conda" title="Enlazar permanentemente con este título">#</a></h2>
+<ul class="simple">
+<li><p>Un canal de Conda es una ubicación donde se alojan <code class="docutils literal notranslate"><span class="pre">paquetes</span> <span class="pre">de</span> <span class="pre">Conda</span></code> de forma remota.</p></li>
+<li><p>Un canal es un equivalente a un <code class="docutils literal notranslate"><span class="pre">repositorio</span></code>.</p></li>
+<li><p>Los paquetes de Conda se descargan desde direcciones URL.</p></li>
+<li><p>El comando <code class="docutils literal notranslate"><span class="pre">conda</span></code> busca un conjunto de canales.</p></li>
+<li><p>Los canales predeterminados (o simplemente, canales <code class="docutils literal notranslate"><span class="pre">por</span> <span class="pre">defecto</span></code>) son los que se van a utilizar si no especificamos ningún parámetro <span class="math notranslate nohighlight">\(--channel\)</span> durante la instalación.</p></li>
+<li><p>Por ejemplo, un comando como el siguiente, buscará el paquete <code class="docutils literal notranslate"><span class="pre">scipy</span></code> en el canal <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> así como también en los canales por defecto:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">scipy</span> <span class="o">--</span><span class="n">channel</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Diferentes canales pueden tener el mismo paquete, por lo que conda debe manejar estas colisiones de canales.</p></li>
+</ul>
+</section>
+<section id="buscando-paquetes">
+<h2><span class="section-number">1.8. </span>Buscando paquetes<a class="headerlink" href="#buscando-paquetes" title="Enlazar permanentemente con este título">#</a></h2>
+<ul class="simple">
+<li><p>¿Cómo se busca un paquete? Simplemente, ejecutar en el terminal</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">search</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Para ver si un paquete específico, como SciPy, está disponible en el entorno, ejecutar en el terminal:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">search</span> <span class="n">scipy</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Conda tiene una lista de canales. Consultemos cuáles canales existen en el entorno:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">show</span> <span class="n">channels</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>El canal <a class="reference external" href="https://conda-forge.org/"><code class="docutils literal notranslate"><span class="pre">conda-forge</span></code></a> es una organización de GitHub que contiene repositorios con recetas de conda, repetibles en Windows, Linux y OSX.</p></li>
+<li><p>Para instalar conda-forge en un entorno conda existente, ejecutar en el terminal:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">append</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+</pre></div>
+</div>
 </section>
 </section>
 
