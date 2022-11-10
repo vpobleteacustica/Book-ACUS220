@@ -1,0 +1,501 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>15. Uso de comando git pull &#8212; ACUS220 - Acústica Computacional con Python</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Índice" href="../../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../../search.html" />
+    <link rel="prev" title="14. Combina tus ramas" href="contenidos_4_merge.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="es">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ACUS220 - Acústica Computacional con Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../README.html">
+                    ACUS220 - Acústica Computacional con Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Entornos de trabajo y programas de control de versiones para un código
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../unidad1/clase01.html">
+   1. Comenzando con ACUS220
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../unidad1/clase02.html">
+   2. Entornos de trabajo y programas de control de versiones para un código
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Repaso de Python Nativo
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../unidad2/clase03.html">
+   3. Funciones nativas y estructuras de control
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Crear un proyecto en un repositorio nuevo
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../unidad3/README.html">
+   4. Crear un proyecto usando un repositorio GitHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../unidad3/contenidos_1/contenidos_1_crear_repo.html">
+   5. En GitHub crea un repositorio nuevo.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../unidad3/contenidos_1/contenidos_1_git_clone_git_status.html">
+   6. Uso de git clone y git status
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  El tema de las ramas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../unidad3/contenidos_2/contenidos_2_actualizar_repo.html">
+   7. Uso de git checkout -b &lt;nombre_de_la_nueva_rama&gt;
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../unidad3/contenidos_2/contenidos_2_incluyendo_codigos.html">
+   8. Seguimiento de los cambios.
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Agregar cambios y hacer commits
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../unidad3/contenidos_3/contenidos_3_agregar_cambios.html">
+   9. Uso de git add, para agregar los cambios.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../unidad3/contenidos_3/contenidos_3_paso_paso.html">
+   10. Paso a paso para actualizar:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../unidad3/contenidos_3/contenidos_3_los_committs.html">
+   11. Uso del comando commit:
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Uso git push y actualiza GitHub
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="contenidos_4_push.html">
+   12. Uso de los comandos git push
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="contenidos_4_actualiza_GitHub.html">
+   13. Anda a GitHub a tu repositorio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="contenidos_4_merge.html">
+   14. Combina tus ramas
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   15. Uso de comando git pull
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/contenidos/unidad4/contenidos_4/contenidos_4_actualiza_repo_local.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Uso de comando git pull</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="uso-de-comando-git-pull">
+<h1><span class="section-number">15. </span>Uso de comando git pull<a class="headerlink" href="#uso-de-comando-git-pull" title="Enlazar permanentemente con este título">#</a></h1>
+<ul class="simple">
+<li><p>Actualiza los cambios hechos en GitHub en tu repositorio local</p></li>
+<li><p>En la terminal ejecuta: <span style="color: blue; font-family: Babas; font-size: 1.12em;">git pull</span></p></li>
+<li><p>Observas con: ls que ya están en local los archivos tutorial_1.py  tutorial_2.py</p></li>
+<li><p>Con eso ya estás actualizado con lo que hay en la rama main del repositorio de GitHub</p></li>
+<li><p>Si haces git status, te darás cuenta en tu repositorio local que no hay ninguna rama a excepción de la rama main, porque ya se eliminó la otra rama</p></li>
+<li><p>Vamos a crear ahora otra rama que llamaremos feature_2</p></li>
+<li><p>Ejecuta los comandos: <span style="color: blue; font-family: Babas; font-size: 1.12em;">git checkout -b feature_2</span></p></li>
+<li><p>Si ejecutas git status te dirá que te cambiaste a la rama feature_2 con el mismo código de main</p></li>
+<li><p>Vamos a VSC y vamos a hacer unos cambios a los archivos</p></li>
+<li><p>Hacer un cambio al archivo README</p>
+<ul>
+<li><p><span style="color: blue; font-family: Babas; font-size: 1.12em;">## Run</span></p></li>
+<li><p><span style="color: blue; font-family: Babas; font-size: 1.12em;">```</span></p></li>
+<li><p><span style="color: blue; font-family: Babas; font-size: 1.12em;">python tutorial_1.py</span>
+<span style="color: blue; font-family: Babas; font-size: 1.12em;">python tutorial_2.py</span></p></li>
+<li><p><span style="color: blue; font-family: Babas; font-size: 1.12em;">```</span></p></li>
+</ul>
+</li>
+<li><p>Cambiamos en los archivos tutorial_1.py y tutorial_2.py:</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">def hello_world(name):</span>
+<span class="go">    print(f&#39;Hello world {name}&#39;)</span>
+<span class="go">name = &#39;Víctor&#39;</span>
+<span class="go">hello_world(name) # aquí vamos a llamar a nuestra función</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">def good_bye_world(name):</span>
+<span class="go">    print(f&#39;Good bye world {name}&#39;)</span>
+<span class="go">name = &#39;Víctor&#39;</span>
+<span class="go">good_bye_world(name) # aquí vamos a llamar a nuestra función</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Lo genial es que VSC te muestra los archivos a los que le has hecho cambios en color amarillo</p></li>
+<li><p>Para ver los cambios que has hecho en VSC, te vas a Source Control</p></li>
+<li><p>Puedes ver los archivos que se han modificado, línea a línea</p></li>
+<li><p>Vamos a la terminal y ejecutamos git status para ver el estado de la rama feature_2</p></li>
+<li><p>Nos muestra los archivos que se han modificado</p></li>
+<li><p>Pero que todavía no han sido movidos al area <span style="color: blue; font-family: Babas; font-size: 1.12em;">staging</span>, no han sido agregados</p></li>
+<li><p>Para agregarlos, ejecuta: <span style="color: blue; font-family: Babas; font-size: 1.12em;">git add .</span></p></li>
+<li><p>Ejecuta: git status</p></li>
+<li><p>Podrás que ver que todos los cambios en los archivos ahora están en el área de stage</p></li>
+<li><p>En la terminal, has un committ del archivo README</p></li>
+<li><p>Para eso ejecuta: git commit <a class="reference external" href="http://README.md">README.md</a> -m “Run instructions added”</p></li>
+<li><p>Ejecuta: git status y verás que ya no está en el área de stage</p></li>
+<li><p>Para committear todos los archivos que quedan, ejecuta git commit -m “Hello and bye world functions updated”</p></li>
+<li><p>Ejecuta: git status y verás que ya no hay ningún archivo en el área de staging</p></li>
+<li><p>Esto quiere decir que está listo para hacer push</p></li>
+<li><p>Otra vez te va a decir que: git push –set-upstream origin feature_2</p></li>
+<li><p>Recuerda que te dice que feature_2 no ha sido creada en GitHub y que solo es una rama local</p></li>
+<li><p>Para crearla en GitHub ejecutamos este comando: git push –set-upstream origin feature_2</p></li>
+<li><p>Te pedirá tus credenciales</p></li>
+<li><p>Hacemos git status</p></li>
+<li><p>Nos vamos a cambiar ahora a la rama main (local!)</p></li>
+<li><p>Ejecutamos: git checkout main</p></li>
+<li><p>Aquí en main no hay nada actualizado porque los cambios los hicimos en la otra rama</p></li>
+<li><p>Nos vamos a GitHub y actualizamos</p></li>
+<li><p>Nos dice que: feature_2 had recent pushes 4 minutes ago</p></li>
+<li><p>También vemos que hay otra rama: feature_2</p></li>
+<li><p>Observas los cambios</p></li>
+<li><p>Pero estos cambios aún no están en main</p></li>
+<li><p>Para hacer estos vamos a Compare &amp; pull request</p></li>
+<li><p>Observa: los cambios va a ser actualizados de la rama feature_2 a main</p></li>
+<li><p>Ejecuta: Merge and pull request</p></li>
+<li><p>Ejecuta: Confirm merge</p></li>
+<li><p>Borra la rama feature_2 y te vas al código</p></li>
+<li><p>te podrás dar cuenta que no hay ninguna otra rama, solamente main</p></li>
+<li><p>Y observas que los cambios están actualizados en main</p></li>
+<li><p>Revisa los committs para que veas los cambios que se hicieron</p></li>
+<li><p>Y puedes ver todos los committs que se han hecho!</p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./contenidos/unidad4/contenidos_4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="contenidos_4_merge.html" title="anterior página">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">anterior</p>
+            <p class="prev-next-title"><span class="section-number">14. </span>Combina tus ramas</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Víctor Poblete, Diego Espejo, Esteban Gallardo<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
